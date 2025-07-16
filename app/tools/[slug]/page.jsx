@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useParams } from "next/navigation";
 // Use relative imports instead of @ alias
-import { tools } from "../../../lib/tools";
+import { tools } from '../../../lib/tools';
 import { runTool } from "../../../lib/convertApi";
 import { Button } from "../../../components/ui/button";
 
