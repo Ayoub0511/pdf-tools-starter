@@ -7,7 +7,7 @@ import { runTool } from "../../../lib/convertApi";
 import { Button } from "../../../components/ui/button";
 
 export default function ToolPage() {
-  const { slug } = useParams();
+  const { merge } = useParams();
   const meta = tools.find((t) => t.slug === slug);
   const [file, setFile] = useState(null);
   const [status, setStatus] = useState("idle");
@@ -17,7 +17,7 @@ export default function ToolPage() {
     if (!file) return;
     setStatus("processing");
     try {
-      const url = await runTool(slug, [file]);
+      const url = await runTool(merge, [file]);
       setOutUrl(url);
       setStatus("done");
     } catch (e) {
